@@ -20,13 +20,13 @@ type Project = {
 const projects: Project[] = [
   {
     id: "1",
-    name: "Northwind Console",
+    name: "AI Daily Brief",
     description:
-      "Consolidated six CSV handoffs into one saved view so the weekly ops review ships Monday morning instead of Tuesday night.",
-    stack: "Next.js · TypeScript · Postgres",
-    href: "#",
-    githubHref: "https://github.com",
-    preview: "a",
+      "Pulls AI, India, and global headlines via RSS into a clean daily feed — built to add LLM summarization + caching next.",
+    stack: "Next.js · TypeScript · RSS",
+    href: "https://github.com/Ri-100/ai-daily-brief",
+    githubHref: "https://github.com/Ri-100/ai-daily-brief",
+    preview: "b",
   },
   {
     id: "2",
