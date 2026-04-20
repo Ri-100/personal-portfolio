@@ -28,26 +28,6 @@ const projects: Project[] = [
     githubHref: "https://github.com/Ri-100/ai-daily-brief",
     preview: "b",
   },
-  {
-    id: "2",
-    name: "Ledger Atlas",
-    description:
-      "Auto-matched bank sweeps to internal GL tags and surfaced only the six exceptions finance had to touch at close.",
-    stack: "React · Node · Redis",
-    href: "#",
-    githubHref: "https://github.com",
-    preview: "b",
-  },
-  {
-    id: "3",
-    name: "Signal Field",
-    description:
-      "Grouped tickets by product surface and volume so leads reassigned two hotspots before either queue breached SLA.",
-    stack: "Next.js · Python · Kafka",
-    href: "#",
-    githubHref: "https://github.com",
-    preview: "c",
-  },
 ];
 
 export function Work() {
