@@ -24,7 +24,7 @@ const projects: Project[] = [
     description:
       "Pulls AI, India, and global headlines via RSS into a clean daily feed — built to add LLM summarization + caching next.",
     stack: "Next.js · TypeScript · RSS",
-    href: "https://github.com/Ri-100/ai-daily-brief",
+    href: "https://dailybrief360.vercel.app/",
     githubHref: "https://github.com/Ri-100/ai-daily-brief",
     preview: "b",
   },
