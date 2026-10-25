@@ -17,21 +17,14 @@ type Project = {
   preview: "a" | "b" | "c";
 };
 
-const projects: Project[] = [
-  {
-    id: "1",
-    name: "AI Daily Brief",
-    description:
-      "Pulls AI, India, and global headlines via RSS into a clean daily feed — built to add LLM summarization + caching next.",
-    stack: "Next.js · TypeScript · RSS",
-    href: "https://dailybrief360.vercel.app/",
-    githubHref: "https://github.com/Ri-100/ai-daily-brief",
-    preview: "b",
-  },
-];
+const projects: Project[] = [];
 
 export function Work() {
   const prefersReducedMotion = useReducedMotion();
+
+  if (projects.length === 0) {
+    return null;
+  }
 
   return (
     <section
@@ -51,12 +44,7 @@ export function Work() {
           {projects.map((project, index) => (
             <motion.article
               key={project.id}
-              className={cn(
-                "group relative flex flex-col border-b border-white/[0.04] text-center last:border-b-0 md:items-start md:text-left",
-                index === 0 && "pb-28 md:pb-36",
-                index === 1 && "py-24 md:py-32",
-                index === 2 && "border-b-0 pb-0 pt-20 md:pt-28"
-              )}
+              className="group relative flex flex-col border-b border-white/[0.04] py-16 text-center first:pt-0 last:border-b-0 last:pb-0 md:items-start md:py-24 md:text-left"
               initial={
                 prefersReducedMotion === true
                   ? { opacity: 1, y: 0 }

@@ -49,7 +49,7 @@ export function Hero({
   name = "Rishav Shukla",
   role = "Full-Stack Engineer",
   tagline = "I build and ship real product—handling everything from UI to AI workflows.",
-  primaryHref = "#work",
+  primaryHref = "#experience",
   secondaryHref = "mailto:hello@example.com",
 }: HeroProps) {
   const prefersReducedMotion = useReducedMotion();
@@ -141,7 +141,7 @@ export function Hero({
             }
             transition={buttonHoverTransition}
           >
-            View Work
+            View Experience
           </MotionA>
           <MotionA
             href={secondaryHref}
