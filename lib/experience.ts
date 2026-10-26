@@ -20,11 +20,11 @@ export const experience: ExperienceRole[] = [
     points: [
       "Implemented Stripe billing and subscriptions.",
       "Worked on workspace multi-tenancy and permissions.",
-      "Built and maintained backend features for the product, including background jobs with BullMQ and Redis.",
+      "Built and maintained backend features, including background jobs with BullMQ and Redis.",
       "Worked on AI analysis of 360-degree feedback reports.",
-      "Built a coaching agent that uses tool calling, with 13 tools available to the agent.",
+      "Built a coaching agent that uses tool calling, with 13 tools available to it.",
       "Implemented PostgreSQL-backed memory for that agent.",
-      "Worked on CI/CD and deployment with AWS ECS and ECR.",
+      "Used AWS ECS and ECR for CI/CD and deployment.",
     ],
   },
   {
@@ -36,8 +36,8 @@ export const experience: ExperienceRole[] = [
     startDate: "2025-01",
     endDate: "2025-06",
     points: [
-      "Worked on a retrieval-augmented generation solution for document question answering, including vector databases and retrieval.",
-      "Worked on SSIM-based image similarity.",
+      "Applied retrieval-augmented generation to document question answering, including vector databases and retrieval.",
+      "Applied SSIM for image similarity.",
       "Contributed to GenAI integration, testing, and deployment.",
     ],
   },

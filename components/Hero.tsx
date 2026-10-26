@@ -48,11 +48,14 @@ export type HeroProps = {
 export function Hero({
   name = "Rishav Shukla",
   role = "Full-Stack Engineer",
-  tagline = "I build and ship real product—handling everything from UI to AI workflows.",
+  tagline = "I build product features, backend systems, and AI applications.",
   primaryHref = "#experience",
   secondaryHref = "mailto:hello@example.com",
 }: HeroProps) {
   const prefersReducedMotion = useReducedMotion();
+  const showContact =
+    secondaryHref.length > 0 &&
+    secondaryHref !== "mailto:hello@example.com";
 
   return (
     <section className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-zinc-950 px-4 sm:px-6">
@@ -143,22 +146,24 @@ export function Hero({
           >
             View Experience
           </MotionA>
-          <MotionA
-            href={secondaryHref}
-            className={cn(
-              buttonVariants({ variant: "outline", size: "lg" }),
-              "h-11 min-w-[148px] rounded-full border-zinc-700 bg-transparent px-8 text-base font-medium text-zinc-100 hover:bg-zinc-800/50"
-            )}
-            whileHover={
-              prefersReducedMotion === true ? undefined : { scale: 1.004 }
-            }
-            whileTap={
-              prefersReducedMotion === true ? undefined : { scale: 0.996 }
-            }
-            transition={buttonHoverTransition}
-          >
-            Contact
-          </MotionA>
+          {showContact ? (
+            <MotionA
+              href={secondaryHref}
+              className={cn(
+                buttonVariants({ variant: "outline", size: "lg" }),
+                "h-11 min-w-[148px] rounded-full border-zinc-700 bg-transparent px-8 text-base font-medium text-zinc-100 hover:bg-zinc-800/50"
+              )}
+              whileHover={
+                prefersReducedMotion === true ? undefined : { scale: 1.004 }
+              }
+              whileTap={
+                prefersReducedMotion === true ? undefined : { scale: 0.996 }
+              }
+              transition={buttonHoverTransition}
+            >
+              Contact
+            </MotionA>
+          ) : null}
         </motion.div>
         </motion.div>
       </div>
