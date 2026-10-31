@@ -1,54 +1,82 @@
 import { experience } from "@/lib/experience";
+import { ScrollLine } from "@/components/ScrollLine";
 
 export function Experience() {
   return (
-    <section
-      id="experience"
-      aria-labelledby="experience-heading"
-      className="scroll-mt-8 border-t border-white/[0.06] bg-zinc-950 px-4 py-24 sm:px-6 sm:py-28 md:py-32"
-    >
-      <div className="mx-auto w-full max-w-5xl">
-        <h2
-          id="experience-heading"
-          className="mb-14 text-center text-xs font-medium uppercase tracking-[0.28em] text-zinc-400 sm:mb-16 md:mb-20 md:text-left"
+    <div id="experience">
+      <ScrollLine />
+      {experience.map((role, index) => (
+        <div key={role.id}>
+          {index > 0 ? <ScrollLine /> : null}
+        <section
+          id={role.id}
+          aria-labelledby={`${role.id}-heading`}
+          className="flex min-h-[100svh] scroll-mt-8 flex-col items-center justify-center px-4 py-20 text-center sm:px-6 sm:py-24"
         >
-          Experience
-        </h2>
-
-        <div className="flex flex-col">
-          {experience.map((role, index) => (
-            <article
-              key={role.id}
-              className="border-t border-white/[0.06] py-12 first:border-t-0 first:pt-0 last:pb-0 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-3 motion-safe:fill-mode-both motion-safe:duration-700 motion-safe:ease-out sm:py-14 md:py-16"
-              style={{ animationDelay: `${index * 80}ms` }}
+          <article className="story-in mx-auto w-full max-w-3xl">
+            <p className="text-[11px] font-medium uppercase tracking-[0.34em] text-amber-300/90">
+              {String(index + 1).padStart(2, "0")}
+              <span className="mx-3 text-zinc-600">/</span>
+              <span className="text-zinc-400">Experience</span>
+            </p>
+            <h2
+              id={`${role.id}-heading`}
+              className="mt-6 text-[clamp(2rem,5vw,3.25rem)] font-semibold leading-[1.05] tracking-tight text-zinc-50"
             >
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
-                <h3 className="text-[clamp(1.5rem,2.6vw,2rem)] font-semibold leading-tight tracking-tight text-zinc-50">
+              {role.href ? (
+                <a
+                  href={role.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-transparent underline-offset-4 hover:decoration-amber-300/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-400/45 focus-visible:ring-offset-4 focus-visible:ring-offset-[#070b14]"
+                >
                   {role.company}
-                </h3>
-                <p className="text-sm tracking-wide text-zinc-400 sm:shrink-0 sm:text-right">
-                  <time dateTime={role.startDate}>{role.startLabel}</time>
-                  <span aria-hidden="true"> – </span>
-                  <span className="sr-only"> to </span>
-                  {role.endDate ? (
-                    <time dateTime={role.endDate}>{role.endLabel}</time>
-                  ) : (
-                    role.endLabel
-                  )}
-                </p>
-              </div>
-
-              <p className="mt-2 text-base text-zinc-300">{role.title}</p>
-
-              <ul className="mt-6 max-w-3xl list-disc space-y-3 pl-5 text-[0.9375rem] leading-relaxed text-zinc-300 marker:text-zinc-500 sm:text-base sm:leading-7">
-                {role.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
+                </a>
+              ) : (
+                role.company
+              )}
+            </h2>
+            <p className="mt-4 text-base text-zinc-300">{role.title}</p>
+            <p className="mt-2 text-sm tracking-wide text-zinc-400">
+              <time dateTime={role.startDate}>{role.startLabel}</time>
+              <span aria-hidden="true"> – </span>
+              <span className="sr-only"> to </span>
+              {role.endDate ? (
+                <time dateTime={role.endDate}>{role.endLabel}</time>
+              ) : (
+                role.endLabel
+              )}
+            </p>
+            {role.summary ? (
+              <p className="mx-auto mt-8 max-w-lg text-pretty text-[0.9375rem] leading-relaxed text-zinc-300 sm:text-lg sm:leading-8">
+                {role.summary}
+              </p>
+            ) : null}
+            <ul className="mt-10 grid grid-cols-1 gap-3 text-left sm:grid-cols-2">
+              {role.points.map((point, pointIndex) => (
+                <li
+                  key={point.title}
+                  className={
+                    pointIndex === role.points.length - 1 &&
+                    role.points.length % 2 === 1
+                      ? "rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 sm:col-span-2 sm:mx-auto sm:w-[calc(50%-0.375rem)]"
+                      : "rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4"
+                  }
+                >
+                  <p className="text-base font-medium text-zinc-50">
+                    {point.title}
+                  </p>
+                  <p className="mt-1.5 text-pretty text-sm leading-relaxed text-zinc-400">
+                    {point.detail}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </section>
         </div>
-      </div>
-    </section>
+      ))}
+      <ScrollLine />
+    </div>
   );
 }

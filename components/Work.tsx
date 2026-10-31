@@ -29,7 +29,7 @@ export function Work() {
   return (
     <section
       id="work"
-      className="scroll-mt-8 border-t border-white/[0.06] bg-zinc-950 px-4 py-32 sm:px-6 sm:py-36 md:py-44"
+      className="flex min-h-[100svh] scroll-mt-8 items-center px-4 py-20 sm:px-6 sm:py-24"
       aria-labelledby="work-heading"
     >
       <div className="mx-auto w-full max-w-5xl">
