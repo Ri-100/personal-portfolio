@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const pixel = Pixelify_Sans({
   subsets: ["latin"],
-  weight: ["500", "600"],
+  weight: "500",
 });
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
