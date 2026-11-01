@@ -60,7 +60,7 @@ export type HeroProps = {
 export function Hero({
   name = "Rishav Shukla",
   role = "Product Engineer",
-  tagline = "I build product features, backend systems, and AI applications.",
+  tagline = "I build products and follow them into production.",
   primaryHref = "#experience",
   secondaryHref = "mailto:garghrishav@gmail.com",
 }: HeroProps) {
@@ -77,6 +77,7 @@ export function Hero({
   const [speech, setSpeech] = useState("");
   const [speechDots, setSpeechDots] = useState(false);
   const [speechLive, setSpeechLive] = useState("");
+  const [spoke, setSpoke] = useState(false);
   const showContact =
     secondaryHref.length > 0 &&
     secondaryHref !== "mailto:hello@example.com";
@@ -216,6 +217,7 @@ export function Hero({
   const reactToClick = () => {
     const line = REPLIES[replyIndex.current % REPLIES.length];
     replyIndex.current += 1;
+    setSpoke(true);
     playSpeech(line);
     if (prefersReducedMotion) return;
     setTilted(true);
@@ -236,6 +238,7 @@ export function Hero({
           speech={speech}
           speechDots={speechDots}
           speechLive={speechLive}
+          spoke={spoke}
         />
         <p className="mt-8 text-[10px] font-medium uppercase tracking-[0.34em] text-zinc-400 sm:text-[11px]">
           {role}
@@ -307,6 +310,7 @@ function Portrait({
   speech,
   speechDots,
   speechLive,
+  spoke,
 }: {
   tilted: boolean;
   onClick: () => void;
@@ -315,6 +319,7 @@ function Portrait({
   speech: string;
   speechDots: boolean;
   speechLive: string;
+  spoke: boolean;
 }) {
   const faceSrc =
     lid === "half" ? BLINK_HALF_SRC : lid === "shut" ? BLINK_SRC : AVATAR_SRC;
@@ -374,7 +379,7 @@ function Portrait({
         text={speech}
         live={speechLive}
         dots={speechDots}
-        hidden={!docked}
+        hidden={!docked || !spoke}
         className="fixed bottom-[4.6rem] right-[5.4rem] z-40 sm:bottom-[5.6rem] sm:right-[6.8rem]"
       />
     </>

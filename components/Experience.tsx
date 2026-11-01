@@ -11,7 +11,7 @@ export function Experience() {
         <section
           id={role.id}
           aria-labelledby={`${role.id}-heading`}
-          className="flex min-h-[100svh] scroll-mt-8 flex-col items-center justify-center px-4 py-20 text-center sm:px-6 sm:py-24"
+          className="flex scroll-mt-8 flex-col items-center px-4 py-20 text-center sm:px-6 sm:py-24"
         >
           <article className="story-in mx-auto w-full max-w-3xl">
             <p className="text-[11px] font-medium uppercase tracking-[0.34em] text-amber-300/90">

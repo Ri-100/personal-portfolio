@@ -21,44 +21,34 @@ export const experience: ExperienceRole[] = [
     startDate: "2025-06",
     href: "https://voiceboard.ai/",
     summary:
-      "AI research agent that interviews people and turns those conversations into reports. In use with real clients.",
+      "Production SaaS for AI interviews and 360 reports, in use with real clients. Deployed with Docker, GitHub Actions, Amazon ECR, and ECS.",
     points: [
       {
-        title: "Billing system",
-        detail: "Built the billing system and integrated it with Stripe.",
-      },
-      {
-        title: "Workspace management",
+        title: "Credit ledger",
         detail:
-          "Implemented workspace management and role-based access control.",
+          "Stripe checkout and subscriptions with signed webhooks. Credits move through a transactional, idempotent ledger, so a retried webhook cannot grant credits twice.",
       },
       {
-        title: "Background jobs",
+        title: "Workspace access",
         detail:
-          "Built and maintained backend features, including background jobs with BullMQ and Redis.",
+          "Workspace roles, membership, and email invites, with checks that block unauthorized role changes and duplicate accounts.",
       },
       {
-        title: "Q&A coaching agent",
+        title: "Voice interview agent",
         detail:
-          "Built a Q&A coaching agent with tool calling, 13 tools, and PostgreSQL-backed memory.",
+          "Browser agent on the OpenAI Realtime API and WebRTC. Turn-taking, interruption, transcript cleanup, tool-driven topic progression, and session resume.",
       },
       {
-        title: "Realtime survey agent",
-        detail: "Optimized prompts for a realtime survey agent that uses tools.",
-      },
-      {
-        title: "360-degree feedback",
-        detail: "Worked on AI analysis of 360-degree feedback reports.",
-      },
-      {
-        title: "Deployment",
-        detail: "Used AWS ECS and ECR for CI/CD and deployment.",
+        title: "360 report pipeline",
+        detail:
+          "Survey scores and blind spots are computed in code. OpenAI writes the narrative only after that. Jobs run on BullMQ and Redis.",
       },
     ],
   },
   {
     id: "delaplex",
     company: "Delaplex",
+    href: "https://delaplex.com/",
     title: "Python Developer Intern",
     startLabel: "January 2025",
     endLabel: "June 2025",
@@ -72,11 +62,13 @@ export const experience: ExperienceRole[] = [
       },
       {
         title: "Image similarity",
-        detail: "Applied SSIM for image similarity.",
+        detail:
+          "Built an SSIM pipeline that finds and clusters similar visuals across document collections.",
       },
       {
         title: "GenAI",
-        detail: "Contributed to GenAI integration, testing, and deployment.",
+        detail:
+          "Integrated, tested, and deployed the GenAI features with the backend team.",
       },
     ],
   },

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Rishav Shukla — Product Engineer",
   description:
-    "Product Engineer. I build product features, backend systems, and AI applications.",
+    "Product engineer. I build products and follow them into production.",
 };
 
 export default function RootLayout({
