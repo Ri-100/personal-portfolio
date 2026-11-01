@@ -11,12 +11,12 @@ export function Experience() {
         <section
           id={role.id}
           aria-labelledby={`${role.id}-heading`}
-          className="flex scroll-mt-8 flex-col items-center px-4 py-20 text-center sm:px-6 sm:py-24"
+          className="flex scroll-mt-8 flex-col items-center px-4 py-24 text-center sm:px-6 sm:py-32"
         >
           <article className="story-in mx-auto w-full max-w-3xl">
             <p className="text-[11px] font-medium uppercase tracking-[0.34em] text-amber-300/90">
               {String(index + 1).padStart(2, "0")}
-              <span className="mx-3 text-zinc-600">/</span>
+              <span className="mx-3 text-zinc-600">—</span>
               <span className="text-zinc-400">Experience</span>
             </p>
             <h2
@@ -39,8 +39,7 @@ export function Experience() {
             <p className="mt-4 text-base text-zinc-300">{role.title}</p>
             <p className="mt-2 text-sm tracking-wide text-zinc-400">
               <time dateTime={role.startDate}>{role.startLabel}</time>
-              <span aria-hidden="true"> – </span>
-              <span className="sr-only"> to </span>
+              <span> — </span>
               {role.endDate ? (
                 <time dateTime={role.endDate}>{role.endLabel}</time>
               ) : (
@@ -48,19 +47,19 @@ export function Experience() {
               )}
             </p>
             {role.summary ? (
-              <p className="mx-auto mt-8 max-w-lg text-pretty text-[0.9375rem] leading-relaxed text-zinc-300 sm:text-lg sm:leading-8">
+              <p className="mx-auto mt-10 max-w-lg text-pretty text-[0.9375rem] leading-relaxed text-zinc-300 sm:text-lg sm:leading-8">
                 {role.summary}
               </p>
             ) : null}
-            <ul className="mt-10 grid grid-cols-1 gap-3 text-left sm:grid-cols-2">
+            <ul className="mt-14 grid grid-cols-1 gap-5 text-left sm:grid-cols-2">
               {role.points.map((point, pointIndex) => (
                 <li
                   key={point.title}
                   className={
                     pointIndex === role.points.length - 1 &&
                     role.points.length % 2 === 1
-                      ? "rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 sm:col-span-2 sm:mx-auto sm:w-[calc(50%-0.375rem)]"
-                      : "rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4"
+                      ? "rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-5 sm:col-span-2 sm:mx-auto sm:w-[calc(50%-0.625rem)]"
+                      : "rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-5"
                   }
                 >
                   <p className="text-base font-medium text-zinc-50">

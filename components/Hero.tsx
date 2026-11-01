@@ -254,6 +254,18 @@ export function Hero({
         <p className="mx-auto mt-5 max-w-md text-pretty text-[0.9375rem] font-light leading-relaxed text-zinc-300 sm:text-lg">
           <Tagline text={tagline} />
         </p>
+        <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-zinc-400 sm:text-[0.9375rem]">
+          Product Engineer at{" "}
+          <a
+            href="https://voiceboard.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-200 underline decoration-transparent underline-offset-4 hover:decoration-amber-300/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-400/45"
+          >
+            Voiceboard.ai
+          </a>, building SaaS workflows and real-time AI experiences from idea
+          to deployment.
+        </p>
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
           <MotionA
             href={primaryHref}
